@@ -15,3 +15,5 @@ my $match = Grammer.parse(@*ARGS[0]);
 my $number =  $match<int><digit> ~ $match<decimal>;
 say $number;
 ```
+at the first line we simply creat a Grammer With name 'Grammer' which is a Class that have methods (rules, tokens and regexes)
+as documented [here](https://docs.perl6.org/language/grammars)
