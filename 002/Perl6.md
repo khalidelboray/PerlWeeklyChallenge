@@ -22,3 +22,17 @@ let's get the zeros token first :
 `[0]+` matches any number of Zeros in the input
 
 `dot` token : matches only `.`
+
+`digit` token : matches any number of digit characters
+
+`int` token : uses zeros token and digit token to match the first part of the number incase it is decimal.
+
+and i made it's parts optional using `?` as the first part may not contain zeros or digits input ex: .53 , 1.52
+
+`decimal` token : matches a dot `.` followed by any number of digit characters
+
+and putting them together in the main `TOP` token gives us the full number 
+
+then we Parse the input from command line `Grammer.parse(@*ARGS[0]);`
+
+then we assign the values to the `$number` var , but i used only this part of the match `$match<int><digit>` which returns the digit characters in the first part of the number then added to it the decimal part `$match<decimal>`
