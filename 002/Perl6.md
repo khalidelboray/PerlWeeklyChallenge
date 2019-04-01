@@ -1,4 +1,4 @@
-# Challenge
+# Challenge #1
 `Write a script or one-liner to remove leading zeros from positive numbers.`
 You can find it [here](https://perlweeklychallenge.org/blog/perl-weekly-challenge-002/)
 # This solution uses Perl 6 :butterfly: Grammer
