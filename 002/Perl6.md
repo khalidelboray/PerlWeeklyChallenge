@@ -17,3 +17,5 @@ say $number;
 ```
 at the first line we simply creat a Grammer With name 'Grammer' which is a Class that have methods (rules, tokens and regexes)
 as documented [here](https://docs.perl6.org/language/grammars)
+let's get the zeros token first : 
+`[0]+` matches any number of Zeros in the input
