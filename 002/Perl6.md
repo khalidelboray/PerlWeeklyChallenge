@@ -38,4 +38,4 @@ and putting them together in the main `TOP` token gives us the full number
 then we Parse the input from command line `Grammer.parse(@*ARGS[0]);`
 # Update
 as menthioned in [issue 1](https://github.com/khalidelboray/PerlWeeklyChallenge/issues/1)
-user may input .25 or 10 so in the first case there will be no int part causing a `Use of Nil in string context` error and the same thing with the seconf input , so ass suggested i added a default value to both of them.
+user may input .25 or 10 so in the first case there will be no int part causing a `Use of Nil in string context` error and the same thing with the second input , so as suggested i added a default value to both of them.
