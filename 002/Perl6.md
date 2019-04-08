@@ -5,15 +5,16 @@ You can find it [here](https://perlweeklychallenge.org/blog/perl-weekly-challeng
 at first here is the code : 
 ```perl6
 grammar Grammer {
-    token TOP {[<int>]? [<decimal>]?}
-    token decimal {<dot><digit>}
-    token int {<zeros>? [<digit>]?}
+    token TOP {<sign>? <int> <decimal>?}
+    token decimal {<dot><digit>?}
+    token int {<zeros>? <digit>?}
     token digit { \d+ }
     token dot { '.' }
-    token zeros {[0]+}
+    token zeros {0+}
+    token sign {'+'}
 }
 my $match = Grammer.parse(@*ARGS[0]);
-my $number =  $match<int><digit> ~ $match<decimal>;
+my $number =  ($match<int><digit> // '')  ~ ($match<decimal> // '');
 say $number;
 ```
 at the first line we simply creat a Grammer With name 'Grammer' which is a Class that have methods (rules, tokens and regexes)
@@ -35,5 +36,6 @@ and i made it's parts optional using `?` as the first part may not contain zeros
 and putting them together in the main `TOP` token gives us the full number 
 
 then we Parse the input from command line `Grammer.parse(@*ARGS[0]);`
-
-then we assign the values to the `$number` var , but i used only this part of the match `$match<int><digit>` which returns the digit characters in the first part of the number then added to it the decimal part `$match<decimal>`
+# Update
+as menthioned in [issue 1](https://github.com/khalidelboray/PerlWeeklyChallenge/issues/1)
+user may input .25 or 10 so in the first case there will be no int part causing a `Use of Nil in string context` error and the same thing with the seconf input , so ass suggested i added a default value to both of them.
