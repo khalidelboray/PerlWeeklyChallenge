@@ -21,7 +21,7 @@ at the first line we simply creat a Grammer With name 'Grammer' which is a Class
 as documented [here](https://docs.perl6.org/language/grammars)
 let's get the zeros token first : 
 
-`[0]+` matches any number of Zeros in the input
+`0+` matches any number of Zeros in the input
 
 `dot` token : matches only `.`
 
